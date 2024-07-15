@@ -1,15 +1,33 @@
-const age = parseInt(prompt("How old are you?"));
+const h1 = document.querySelector("div.hello:first-child h1");
 
-console.log(age);
-
-if (isNaN(age) || age < 0) {
-  console.log("Please write a real positive number");
-} else if (age < 18) {
-  console.log("You are too young.");
-} else if (age >= 18 && age <= 50) {
-  console.log("You can drink.");
-} else if (age > 50 && age <= 80) {
-  console.log("You should exercise.");
-} else if (age > 80) {
-  console.log("You can do whatever you want");
+function handleTitleClick() {
+  h1.style.color = "blue";
 }
+
+function handleMouseEnter() {
+  h1.innerText = "Mouse is here!";
+}
+function handleMouseLeave() {
+  h1.innerText = "Mouse is gone..";
+}
+function handleWindowResize() {
+  document.body.style.backgroundColor = "tomato";
+}
+function handleWindowCopy() {
+  alert("copier!!");
+}
+function handleWindowOffline() {
+  alert("SOS no wifi!!");
+}
+function handleWindowOnline() {
+  alert("All Good!!");
+}
+
+h1.addEventListener("click", handleTitleClick);
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
